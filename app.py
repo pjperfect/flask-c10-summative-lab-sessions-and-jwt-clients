@@ -11,6 +11,7 @@ from flask_migrate import Migrate
 from config import Config
 from models import db, bcrypt
 from routes.auth import auth_bp
+from routes.notes import notes_bp
 
 migrate = Migrate()
 
@@ -27,6 +28,7 @@ def create_app(config_class=Config):
 
     # ----- Blueprints -----
     app.register_blueprint(auth_bp)
+    app.register_blueprint(notes_bp)
 
     return app
 
